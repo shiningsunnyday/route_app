@@ -1,0 +1,528 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0E24D2DEBEBE7AF579DCF48A /* Pods_aiRun.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E9BF77B545D51F3BFF8C66 /* Pods_aiRun.framework */; };
+		641582B5212A96C20064FA82 /* beautiful-sunset-flfef-ocean-sky-sun-background-images-best-of-100-engaging-running-s-c2b7-pexels-c2b7-free-stock-s-of-beautiful-sunset-flfef-ocean-sky-sun-background-images.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 641582B7212A96C20064FA82 /* beautiful-sunset-flfef-ocean-sky-sun-background-images-best-of-100-engaging-running-s-c2b7-pexels-c2b7-free-stock-s-of-beautiful-sunset-flfef-ocean-sky-sun-background-images.jpg */; };
+		6415C8B92100740A00DAC298 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6415C8B82100740A00DAC298 /* AppDelegate.swift */; };
+		6415C8BB2100740A00DAC298 /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6415C8BA2100740A00DAC298 /* TitleViewController.swift */; };
+		6415C8BE2100740A00DAC298 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6415C8BC2100740A00DAC298 /* Main.storyboard */; };
+		6415C8C12100740A00DAC298 /* aiRun.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6415C8BF2100740A00DAC298 /* aiRun.xcdatamodeld */; };
+		6415C8C32100740C00DAC298 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6415C8C22100740C00DAC298 /* Assets.xcassets */; };
+		6415C8C62100740C00DAC298 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6415C8C42100740C00DAC298 /* LaunchScreen.storyboard */; };
+		6415C8CE2100751A00DAC298 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6415C8CD2100751A00DAC298 /* MapViewController.swift */; };
+		6415C8D1210134DF00DAC298 /* ListOfCoordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6415C8D0210134DF00DAC298 /* ListOfCoordinates.swift */; };
+		6415C8D3210134E700DAC298 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6415C8D2210134E700DAC298 /* Coordinate.swift */; };
+		6415C8DC2102876A00DAC298 /* HomeMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6415C8DB2102876A00DAC298 /* HomeMapViewController.swift */; };
+		643C4D3B212D2E1700C1F5FF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6415C8C72100740C00DAC298 /* Info.plist */; };
+		6453B5A42129537B000CFA74 /* run.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6453B5A32129537B000CFA74 /* run.jpg */; };
+		6453B5A621295391000CFA74 /* runman.png in Resources */ = {isa = PBXBuildFile; fileRef = 6453B5A521295391000CFA74 /* runman.png */; };
+		6453B5B02129565E000CFA74 /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6453B5AF2129565E000CFA74 /* SwipeViewController.swift */; };
+		646FD16F2117BD6C00526BA9 /* LocationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646FD16E2117BD6C00526BA9 /* LocationProtocol.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		447B50B3FADC8789F46948CC /* Pods-aiRun.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aiRun.debug.xcconfig"; path = "Pods/Target Support Files/Pods-aiRun/Pods-aiRun.debug.xcconfig"; sourceTree = "<group>"; };
+		641582B8212A97280064FA82 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = en; path = "en.lproj/beautiful-sunset-flfef-ocean-sky-sun-background-images-best-of-100-engaging-running-s-c2b7-pexels-c2b7-free-stock-s-of-beautiful-sunset-flfef-ocean-sky-sun-background-images.jpg"; sourceTree = "<group>"; };
+		6415C8B52100740A00DAC298 /* aiRun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aiRun.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6415C8B82100740A00DAC298 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6415C8BA2100740A00DAC298 /* TitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
+		6415C8BD2100740A00DAC298 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6415C8C02100740A00DAC298 /* aiRun.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = aiRun.xcdatamodel; sourceTree = "<group>"; };
+		6415C8C22100740C00DAC298 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6415C8C52100740C00DAC298 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6415C8C72100740C00DAC298 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6415C8CD2100751A00DAC298 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		6415C8D0210134DF00DAC298 /* ListOfCoordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfCoordinates.swift; sourceTree = "<group>"; };
+		6415C8D2210134E700DAC298 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
+		6415C8DB2102876A00DAC298 /* HomeMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMapViewController.swift; sourceTree = "<group>"; };
+		6453B5A32129537B000CFA74 /* run.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = run.jpg; sourceTree = "<group>"; };
+		6453B5A521295391000CFA74 /* runman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = runman.png; sourceTree = "<group>"; };
+		6453B5AF2129565E000CFA74 /* SwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeViewController.swift; sourceTree = "<group>"; };
+		646FD16E2117BD6C00526BA9 /* LocationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationProtocol.swift; sourceTree = "<group>"; };
+		97E9BF77B545D51F3BFF8C66 /* Pods_aiRun.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_aiRun.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D941EEF5F256C601E0D50514 /* Pods-aiRun.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aiRun.release.xcconfig"; path = "Pods/Target Support Files/Pods-aiRun/Pods-aiRun.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6415C8B22100740A00DAC298 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E24D2DEBEBE7AF579DCF48A /* Pods_aiRun.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		22843D7472B1CB3CC77FAAB6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				97E9BF77B545D51F3BFF8C66 /* Pods_aiRun.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6415C8AC2100740A00DAC298 = {
+			isa = PBXGroup;
+			children = (
+				6415C8B72100740A00DAC298 /* aiRun */,
+				6415C8B62100740A00DAC298 /* Products */,
+				D804AB172FC8E26FE4DCB6E4 /* Pods */,
+				22843D7472B1CB3CC77FAAB6 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		6415C8B62100740A00DAC298 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6415C8B52100740A00DAC298 /* aiRun.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6415C8B72100740A00DAC298 /* aiRun */ = {
+			isa = PBXGroup;
+			children = (
+				6415C8D4210172A200DAC298 /* View Controllers */,
+				6415C8CF210134C000DAC298 /* Models */,
+				6415C8B82100740A00DAC298 /* AppDelegate.swift */,
+				6415C8BC2100740A00DAC298 /* Main.storyboard */,
+				6415C8C22100740C00DAC298 /* Assets.xcassets */,
+				6415C8C42100740C00DAC298 /* LaunchScreen.storyboard */,
+				6415C8C72100740C00DAC298 /* Info.plist */,
+				6415C8BF2100740A00DAC298 /* aiRun.xcdatamodeld */,
+			);
+			path = aiRun;
+			sourceTree = "<group>";
+		};
+		6415C8CF210134C000DAC298 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6415C8D0210134DF00DAC298 /* ListOfCoordinates.swift */,
+				646FD16E2117BD6C00526BA9 /* LocationProtocol.swift */,
+				6415C8D2210134E700DAC298 /* Coordinate.swift */,
+				6453B5A32129537B000CFA74 /* run.jpg */,
+				6453B5A521295391000CFA74 /* runman.png */,
+				641582B7212A96C20064FA82 /* beautiful-sunset-flfef-ocean-sky-sun-background-images-best-of-100-engaging-running-s-c2b7-pexels-c2b7-free-stock-s-of-beautiful-sunset-flfef-ocean-sky-sun-background-images.jpg */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6415C8D4210172A200DAC298 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6415C8CD2100751A00DAC298 /* MapViewController.swift */,
+				6415C8DB2102876A00DAC298 /* HomeMapViewController.swift */,
+				6415C8BA2100740A00DAC298 /* TitleViewController.swift */,
+				6453B5AF2129565E000CFA74 /* SwipeViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		D804AB172FC8E26FE4DCB6E4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				447B50B3FADC8789F46948CC /* Pods-aiRun.debug.xcconfig */,
+				D941EEF5F256C601E0D50514 /* Pods-aiRun.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6415C8B42100740A00DAC298 /* aiRun */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6415C8CA2100740C00DAC298 /* Build configuration list for PBXNativeTarget "aiRun" */;
+			buildPhases = (
+				173B606C9E1B3C9A225C0A95 /* [CP] Check Pods Manifest.lock */,
+				6415C8B12100740A00DAC298 /* Sources */,
+				6415C8B22100740A00DAC298 /* Frameworks */,
+				6415C8B32100740A00DAC298 /* Resources */,
+				16367F1321A7F9053C058819 /* [CP] Embed Pods Frameworks */,
+				F661EBE02DC879377B9D2F68 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = aiRun;
+			productName = aiRun;
+			productReference = 6415C8B52100740A00DAC298 /* aiRun.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6415C8AD2100740A00DAC298 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "Michael Sun and Eric Frankel";
+				TargetAttributes = {
+					6415C8B42100740A00DAC298 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 6415C8B02100740A00DAC298 /* Build configuration list for PBXProject "aiRun" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6415C8AC2100740A00DAC298;
+			productRefGroup = 6415C8B62100740A00DAC298 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6415C8B42100740A00DAC298 /* aiRun */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6415C8B32100740A00DAC298 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				643C4D3B212D2E1700C1F5FF /* Info.plist in Resources */,
+				641582B5212A96C20064FA82 /* beautiful-sunset-flfef-ocean-sky-sun-background-images-best-of-100-engaging-running-s-c2b7-pexels-c2b7-free-stock-s-of-beautiful-sunset-flfef-ocean-sky-sun-background-images.jpg in Resources */,
+				6415C8C62100740C00DAC298 /* LaunchScreen.storyboard in Resources */,
+				6453B5A42129537B000CFA74 /* run.jpg in Resources */,
+				6453B5A621295391000CFA74 /* runman.png in Resources */,
+				6415C8C32100740C00DAC298 /* Assets.xcassets in Resources */,
+				6415C8BE2100740A00DAC298 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		16367F1321A7F9053C058819 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-aiRun/Pods-aiRun-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework",
+				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework.dSYM",
+				"${BUILT_PRODUCTS_DIR}/MapboxCoreNavigation/MapboxCoreNavigation.framework",
+				"${BUILT_PRODUCTS_DIR}/MapboxDirections.swift/MapboxDirections.framework",
+				"${BUILT_PRODUCTS_DIR}/MapboxMobileEvents/MapboxMobileEvents.framework",
+				"${BUILT_PRODUCTS_DIR}/MapboxNavigation/MapboxNavigation.framework",
+				"${BUILT_PRODUCTS_DIR}/MapboxSpeech/MapboxSpeech.framework",
+				"${BUILT_PRODUCTS_DIR}/Polyline/Polyline.framework",
+				"${BUILT_PRODUCTS_DIR}/Solar/Solar.framework",
+				"${BUILT_PRODUCTS_DIR}/Turf/Turf.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapbox.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/Mapbox.framework.dSYM",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MapboxCoreNavigation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MapboxDirections.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MapboxMobileEvents.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MapboxNavigation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MapboxSpeech.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Polyline.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Solar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Turf.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-aiRun/Pods-aiRun-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		173B606C9E1B3C9A225C0A95 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-aiRun-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F661EBE02DC879377B9D2F68 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-aiRun/Pods-aiRun-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-aiRun/Pods-aiRun-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6415C8B12100740A00DAC298 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6415C8BB2100740A00DAC298 /* TitleViewController.swift in Sources */,
+				6415C8C12100740A00DAC298 /* aiRun.xcdatamodeld in Sources */,
+				6453B5B02129565E000CFA74 /* SwipeViewController.swift in Sources */,
+				6415C8D1210134DF00DAC298 /* ListOfCoordinates.swift in Sources */,
+				6415C8B92100740A00DAC298 /* AppDelegate.swift in Sources */,
+				646FD16F2117BD6C00526BA9 /* LocationProtocol.swift in Sources */,
+				6415C8CE2100751A00DAC298 /* MapViewController.swift in Sources */,
+				6415C8DC2102876A00DAC298 /* HomeMapViewController.swift in Sources */,
+				6415C8D3210134E700DAC298 /* Coordinate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		641582B7212A96C20064FA82 /* beautiful-sunset-flfef-ocean-sky-sun-background-images-best-of-100-engaging-running-s-c2b7-pexels-c2b7-free-stock-s-of-beautiful-sunset-flfef-ocean-sky-sun-background-images.jpg */ = {
+			isa = PBXVariantGroup;
+			children = (
+				641582B8212A97280064FA82 /* en */,
+			);
+			name = "beautiful-sunset-flfef-ocean-sky-sun-background-images-best-of-100-engaging-running-s-c2b7-pexels-c2b7-free-stock-s-of-beautiful-sunset-flfef-ocean-sky-sun-background-images.jpg";
+			sourceTree = "<group>";
+		};
+		6415C8BC2100740A00DAC298 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6415C8BD2100740A00DAC298 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6415C8C42100740C00DAC298 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6415C8C52100740C00DAC298 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6415C8C82100740C00DAC298 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6415C8C92100740C00DAC298 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6415C8CB2100740C00DAC298 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 447B50B3FADC8789F46948CC /* Pods-aiRun.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y38R422847;
+				INFOPLIST_FILE = aiRun/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ai.aiRun;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6415C8CC2100740C00DAC298 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D941EEF5F256C601E0D50514 /* Pods-aiRun.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y38R422847;
+				INFOPLIST_FILE = aiRun/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ai.aiRun;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6415C8B02100740A00DAC298 /* Build configuration list for PBXProject "aiRun" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6415C8C82100740C00DAC298 /* Debug */,
+				6415C8C92100740C00DAC298 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6415C8CA2100740C00DAC298 /* Build configuration list for PBXNativeTarget "aiRun" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6415C8CB2100740C00DAC298 /* Debug */,
+				6415C8CC2100740C00DAC298 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6415C8BF2100740A00DAC298 /* aiRun.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6415C8C02100740A00DAC298 /* aiRun.xcdatamodel */,
+			);
+			currentVersion = 6415C8C02100740A00DAC298 /* aiRun.xcdatamodel */;
+			path = aiRun.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 6415C8AD2100740A00DAC298 /* Project object */;
+}

@@ -1,0 +1,6 @@
+framework module Pods_aiRun {
+  umbrella header "Pods-aiRun-umbrella.h"
+
+  export *
+  module * { export * }
+}
