@@ -76,7 +76,7 @@ open class RouteOptions: DirectionsOptions {
      The path of the request URL, not including the hostname or any parameters.
      */
     internal override var path: String {
-        assert(!queries.isEmpty, "No query")
+        /*assert(!queries.isEmpty, "No query")*/
         
         let queryComponent = queries.joined(separator: ";")
         return "directions/v5/\(profileIdentifier.rawValue)/\(queryComponent).json"

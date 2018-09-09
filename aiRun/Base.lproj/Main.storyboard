@@ -129,10 +129,29 @@
         <!--Map View Controller-->
         <scene sceneID="xlW-ae-EhA">
             <objects>
-                <viewController id="Wkg-if-XXO" customClass="MapViewController" customModule="aiRun" customModuleProvider="target" sceneMemberID="viewController"/>
+                <viewController id="Wkg-if-XXO" customClass="MapViewController" customModule="aiRun" customModuleProvider="target" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="acQ-fE-iw7" kind="show" identifier="navigationStart" id="VeH-U4-tps"/>
+                    </connections>
+                </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vuc-kD-ryl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="972" y="930"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Rv4-EX-Skx">
+            <objects>
+                <viewController id="acQ-fE-iw7" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pxn-zz-bPL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Gkz-vW-3A8"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mlR-SH-Gut" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2193" y="930"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WcW-nx-76Q">

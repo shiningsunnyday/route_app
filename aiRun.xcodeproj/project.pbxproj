@@ -24,6 +24,7 @@
 		6453B5A621295391000CFA74 /* runman.png in Resources */ = {isa = PBXBuildFile; fileRef = 6453B5A521295391000CFA74 /* runman.png */; };
 		6453B5B02129565E000CFA74 /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6453B5AF2129565E000CFA74 /* SwipeViewController.swift */; };
 		646FD16F2117BD6C00526BA9 /* LocationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646FD16E2117BD6C00526BA9 /* LocationProtocol.swift */; };
+		64B0349B2145109C00FA6600 /* VoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B0349A2145109C00FA6600 /* VoiceViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		6453B5A521295391000CFA74 /* runman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = runman.png; sourceTree = "<group>"; };
 		6453B5AF2129565E000CFA74 /* SwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeViewController.swift; sourceTree = "<group>"; };
 		646FD16E2117BD6C00526BA9 /* LocationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationProtocol.swift; sourceTree = "<group>"; };
+		64B0349A2145109C00FA6600 /* VoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceViewController.swift; sourceTree = "<group>"; };
 		97E9BF77B545D51F3BFF8C66 /* Pods_aiRun.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_aiRun.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D941EEF5F256C601E0D50514 /* Pods-aiRun.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aiRun.release.xcconfig"; path = "Pods/Target Support Files/Pods-aiRun/Pods-aiRun.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,6 +124,7 @@
 				6415C8DB2102876A00DAC298 /* HomeMapViewController.swift */,
 				6415C8BA2100740A00DAC298 /* TitleViewController.swift */,
 				6453B5AF2129565E000CFA74 /* SwipeViewController.swift */,
+				64B0349A2145109C00FA6600 /* VoiceViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6415C8BB2100740A00DAC298 /* TitleViewController.swift in Sources */,
+				64B0349B2145109C00FA6600 /* VoiceViewController.swift in Sources */,
 				6415C8C12100740A00DAC298 /* aiRun.xcdatamodeld in Sources */,
 				6453B5B02129565E000CFA74 /* SwipeViewController.swift in Sources */,
 				6415C8D1210134DF00DAC298 /* ListOfCoordinates.swift in Sources */,
