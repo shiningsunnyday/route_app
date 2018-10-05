@@ -15,9 +15,9 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.2</string>
+	<string>1.0.4</string>
 	<key>CFBundleVersion</key>
-	<string>1.0.2</string>
+	<string>1.0.4</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>MGLMapboxAccessToken</key>
@@ -29,6 +29,11 @@
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>$(Your location is needed to calculate your route.)</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>audio</string>
+		<string>location</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

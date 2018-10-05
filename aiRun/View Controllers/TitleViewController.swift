@@ -16,7 +16,9 @@ class TitleViewController: UIViewController, LocationDelegate {
     @IBOutlet weak var latitude: UITextField!
     @IBOutlet weak var longitude: UITextField!
     @IBOutlet weak var distance: UITextField!
-    
+    var newUser: Bool?
+
+    var user: String?
     func locationReady(location: CLLocation) {
         
         print(location)
@@ -28,7 +30,8 @@ class TitleViewController: UIViewController, LocationDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
         if let lat = lat, let long = long {
             
             latitude.text = String(lat)
@@ -61,7 +64,7 @@ class TitleViewController: UIViewController, LocationDelegate {
         
         if notification.name == Notification.Name.UIKeyboardWillShow ||
             notification.name == Notification.Name.UIKeyboardWillChangeFrame {
-            view.frame.origin.y = -keyboardRect.height + 64
+            view.frame.origin.y = -keyboardRect.height + 0
         } else {
             view.frame.origin.y = 0
         }
@@ -90,6 +93,7 @@ class TitleViewController: UIViewController, LocationDelegate {
                 print(destination.distance)
                 destination.curLocation = CLLocation(latitude: latDouble, longitude: lngDouble)
                 print(destination.curLocation)
+                destination.newUser = newUser!
                 
             }
             
@@ -99,7 +103,17 @@ class TitleViewController: UIViewController, LocationDelegate {
             
             let destination = segue.destination as! HomeMapViewController
             
+
+
+                destination.curLocation = CLLocation(latitude: lat!, longitude: long!)
+                print(destination.curLocation)
+                
+                
+            
+            
+
             destination.delegate = self
+ 
             
         default:
             
@@ -115,7 +129,7 @@ class TitleViewController: UIViewController, LocationDelegate {
 extension TitleViewController {
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(TitleViewController.dismissKeyboard))
-        tap.cancelsTouchesInView = false
+        tap.cancelsTouchesInView = true
         view.addGestureRecognizer(tap)
     }
     @objc func dismissKeyboard() {

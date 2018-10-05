@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct ListOfCoordinates: Decodable {
+struct ListOfCoordinates: Codable {
     
     let listOfCoordinates: [Coordinate]
     

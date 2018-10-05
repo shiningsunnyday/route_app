@@ -19,29 +19,26 @@ class HomeMapViewController: UIViewController  {
     var mapView = GMSMapView()
     var marker = GMSMarker()
     var camera: GMSCameraPosition?
-    var curLocation = CLLocation() { didSet {
+    var curLocation: CLLocation?
     
-        
-        var current = GMSCameraPosition.camera(withLatitude: curLocation.coordinate.latitude + 0.007,
-                                              longitude: curLocation.coordinate.longitude - 0.008,
-                                              zoom: 15)
-        mapView.camera = current
-        marker.map = mapView
-        
-        
-        view = mapView
-        
-        self.delegate?.locationReady(location: curLocation)
-        
-        }}
-    
+
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.requestLocation()
+        guard let curLocation = curLocation else { return }
+        var current = GMSCameraPosition.camera(withLatitude: curLocation.coordinate.latitude,
+                                               longitude: curLocation.coordinate.longitude,
+                                               zoom: 15)
+        mapView.camera = current
+        
+
+        
+        
+        view = mapView
+        marker.position = curLocation.coordinate
+        marker.map = mapView
+        marker.title = "Did I get your location right?"
+
         
         //GET ALL THE COORDINATES HERE AND APPEND TO COORDINATES
         
@@ -74,7 +71,7 @@ extension HomeMapViewController: CLLocationManagerDelegate {
         
         if let location = locations.last {
             
-            curLocation = location
+            //curLocation = location
             /*coordinates.append(location.coordinate)*/
             /*let camera = GMSCameraPosition.camera(withLatitude: coordinates.first!.latitude, longitude: coordinates.first!.longitude, zoom: 10.0)
              

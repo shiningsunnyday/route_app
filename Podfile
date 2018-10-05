@@ -12,6 +12,11 @@ target 'aiRun' do
   pod 'Alamofire', '~> 4.7'
   pod 'Mapbox-iOS-SDK', '~> 4.2.0'
   pod 'MapboxNavigation', '~> 0.19.2'
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'FirebaseUI/Auth'
+  pod 'Firebase/Database'
+  pod 'Firebase/Storage'
 
 
 end
