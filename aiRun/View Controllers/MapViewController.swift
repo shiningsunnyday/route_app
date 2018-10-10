@@ -21,57 +21,112 @@ import AVFoundation
 
 class MapViewController: UIViewController, MGLMapViewDelegate, UIGestureRecognizerDelegate, UIToolbarDelegate {
     
-    
+    var labelDown: UILabel?
+    var textField: UITextField?
     var mapView: NavigationMapView!
     var name: String = "Michael"
     var navBar: UINavigationBar?
     var width: Double?
     var directionsRoute: Route?
     
-    var distance: Double = 0.0
+    var distance: Double?
     var currentKey = ""
     var curLocation = CLLocation()
     var waypoints: [Waypoint] = []
     var label: UILabel!
     var state: Int = 0
     var routeFailed = 0
-    var newUser = false
+    var newUser: Bool! { didSet {
+        
+        
+        voiceController = CustomVoiceController(newUser)
+        
+        
+        playOpeningMessage()
+        
+        }}
     
     var voiceController: CustomVoiceController?
     var currentAnnotation = MGLPointAnnotation()
     
-    
-    
-    
-    func userConfirmed(_ confirmed: Bool) {
+    func playOpeningMessage() {
+        if newUser {
         
-        self.newUser = confirmed
-        self.voiceController = CustomVoiceController(self.newUser)
+        guard let labelDown = labelDown else { return }
+        labelDown.attributedText = NSAttributedString(string: "  Welcoming message being played. Please turn up the volume.  ")
+        self.textField!.isEnabled = false
+        labelDown.adjustsFontSizeToFitWidth = true
+        labelDown.textAlignment = .center
+        labelDown.backgroundColor = UIColor.yellow
         
+        let newUserMessage = UITapGestureRecognizer(target: self, action: "welcomeTouched:")
+        newUserMessage.delegate = self
+        labelDown.addGestureRecognizer(newUserMessage)
         
+        let timer = Timer.scheduledTimer(withTimeInterval: 85.0, repeats: false) { timer in
+            
+            labelDown.attributedText = NSAttributedString(string: "Swipe left here anytime to return to the home page.")
+            labelDown.textAlignment = .center
+            labelDown.backgroundColor = UIColor.lightText
+            self.textField!.backgroundColor = UIColor.yellow
+            self.textField?.isEnabled = true
+            
+        }
+        self.view.addSubview(labelDown)
+        }
     }
     
     
     
     @objc func goBack(_ sender: UISwipeGestureRecognizer) {
         
-        self.performSegue(withIdentifier: "goBack", sender: nil)
-        
+        switch sender.direction {
+            case .left:
+                self.performSegue(withIdentifier: "goBack", sender: nil)
+        case .right:
+            print("hi")
+            
+        default:
+            print("hi")
+            
+        }
     }
+    
+    /*@objc func distanceChanged(_ textField: UITextField) {
+        
+        didLongPress(UILongPressGestureRecognizer(self))
+    }*/
     
     @objc func didLongPress(_ sender: UILongPressGestureRecognizer) {
         
-        guard sender.state == .began else { return }
+        if let field = self.textField {
+            
+            self.distance = Double(field.text!)
+            self.textField!.backgroundColor = UIColor.green
+        }
         
         if state == 0 {
             
-            
             currentAnnotation.coordinate = curLocation.coordinate
-            currentAnnotation.title = "Help me calculate a route!"
+            currentAnnotation.title = "Fetching a random route..."
             
             mapView.addAnnotation(currentAnnotation)
             mapView.selectAnnotation(currentAnnotation, animated: true)
+            autoTap()
             
+ 
+            
+        }
+        
+    }
+    
+    func autoTap() {
+        
+        calculateRoute(from: self.curLocation.coordinate) { (route, error) in
+            
+            if error != nil {
+                
+            }
         }
         
     }
@@ -106,11 +161,16 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UIGestureRecogniz
         
         let navigationViewController = NavigationViewController(for: directionsRoute!)
         navigationViewController.showsReportFeedback = false
+        navigationViewController.routeController.reroutesProactively = true
+
+        print(navigationViewController.routeController.reroutingTolerance)
         navigationViewController.voiceController = self.voiceController
         
         self.present(navigationViewController, animated: true, completion: nil)
         
     }
+    
+    
     
     
     func mapView(_ mapView: MGLMapView, tapOnCalloutFor annotation: MGLAnnotation) {
@@ -120,14 +180,6 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UIGestureRecogniz
         switch state {
             
         case 0:
-            
-            state += 1
-            currentAnnotation.title = "Let me crunch the math..."
-            mapView.selectAnnotation(currentAnnotation, animated: true)
-            
-            
-            
-        case 1:
             
             if let coordinates = directionsRoute?.coordinates {
                 
@@ -157,7 +209,7 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UIGestureRecogniz
                 mapView.selectAnnotation(currentAnnotation, animated: true)
             } else if routeFailed >= 5 {
                 
-                currentAnnotation.title = "Still? You are one FASTidious runner..."
+                currentAnnotation.title = "You are one FASTidious runner..."
                 mapView.selectAnnotation(currentAnnotation, animated: true)
             }
             
@@ -168,7 +220,7 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UIGestureRecogniz
             }
             
             
-            
+            autoTap()
 
             
         default:
@@ -177,68 +229,89 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UIGestureRecogniz
             
         }
         
-        calculateRoute(from: annotation.coordinate) { (route, error) in
-            
-            if error != nil {
-                
-            }
-        }
+        
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Hide the Navigation Bar
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // Show the Navigation Bar
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
     
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
         self.width = Double(self.view.frame.width)
         navBar = UINavigationBar(frame: CGRect(x: 0, y: 44, width: self.width!, height: 44))
-        let backItem = UINavigationItem(title: "Swipe left to go back")
-        navBar!.items = [backItem]
+        navBar?.backgroundColor = UIColor.lightGray
+        let newItem = UINavigationItem(title: "")
+        label = UILabel(frame: CGRect(x: 20, y: 44, width: navBar!.frame.width/2 - 20, height: navBar!.frame.height))
+        label.attributedText = NSAttributedString(string: "Enter running distance (km): ")
         
-        self.view.addSubview(navBar!)
+        label.adjustsFontSizeToFitWidth = true
+        label.textAlignment = .center
+        label.tag = 5
+        navBar!.setItems([newItem], animated: true)
+        navBar!.backItem?.backBarButtonItem = UIBarButtonItem(barButtonSystemItem: .rewind, target: self, action: nil)
+        
+        navBar!.tag = 1
         
         
-        let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: "goBack:")
-        swipeRecognizer.direction = .left
-        navBar!.addGestureRecognizer(swipeRecognizer)
+        textField = UITextField(frame: CGRect(x: navBar!.frame.width/2, y: navBar!.frame.minY + 10, width: navBar!.frame.width/2 - 20, height: navBar!.frame.height - 20))
+        textField!.borderStyle = .roundedRect
+        textField!.keyboardType = .decimalPad
+        textField!.tag = 6
+        textField!.textAlignment = .center
+        textField!.font = UIFont(name: "Arial", size: 12)
+        textField!.addTarget(self, action: #selector(self.didLongPress(_:)), for: .editingChanged)
+        textField!.addTarget(self, action: #selector(self.dismissKeyboard), for: .editingChanged)
         
-        navBar!.setItems([backItem], animated: false)
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         mapView = NavigationMapView(frame: CGRect(x: 0, y: 88, width: self.view.frame.width, height: self.view.frame.height - 132))
-        self.label = UILabel(frame: CGRect(x: 0, y: self.view.frame.height - 44, width: self.view.frame.width, height: 44))
-        
-        if newUser {
+       
+        labelDown = UILabel(frame: CGRect(x: 0, y: self.view.frame.height - 44, width: self.view.frame.width, height: 44))
+        if let labelDown = self.labelDown {
             
-            label.attributedText = NSAttributedString(string: "  Welcoming message being played. Please turn up the volume.  ")
-            label.adjustsFontSizeToFitWidth = true
-            label.textAlignment = .center
-            label.backgroundColor = UIColor.yellow
+        if self.newUser {
             
-            let newUserMessage = UITapGestureRecognizer(target: self, action: "welcomeTouched:")
-            newUserMessage.delegate = self
-            self.label.addGestureRecognizer(newUserMessage)
-            self.voiceController = CustomVoiceController(true)
-            let timer = Timer.scheduledTimer(withTimeInterval: 85.0, repeats: false) { timer in
-                
-                self.label.attributedText = NSAttributedString(string: "Long tap your location beacon to begin.")
-                self.label.textAlignment = .center
-                self.label.backgroundColor = UIColor.lightGray
-                
-                
-                
-            }
-            self.view.addSubview(label)
+            
+            
             
         } else {
         
-        label.attributedText = NSAttributedString(string: "Long tap your location beacon to begin.")
-        label.textAlignment = .center
-        label.backgroundColor = UIColor.lightGray
-        self.view.addSubview(label)
+        
+            
+        labelDown.attributedText = NSAttributedString(string: "Swipe left here anytime to return to the home page.")
+        labelDown.textAlignment = .center
+        let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(self.goBack(_:)))
+        swipeRecognizer.direction = .left
+        swipeRecognizer.delegate = self
+        self.view.addGestureRecognizer(swipeRecognizer)
+        labelDown.backgroundColor = UIColor.lightText
+        self.view.addSubview(labelDown)
             
         }
-        
+        mapView.tag = 0
         self.view.addSubview(mapView)
         self.view.backgroundColor = UIColor.white
         
@@ -251,14 +324,15 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UIGestureRecogniz
         lpgr.delegate = self
         self.mapView.addGestureRecognizer(lpgr)
         
+        }
+        
+        self.view.addSubview(navBar!)
+        self.view.addSubview(label)
+        self.view.addSubview(textField!)
         
         
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-    }
     
     func drawRoute(route: Route) {
         
@@ -267,7 +341,11 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UIGestureRecogniz
             let distance = route.distance
             let time = route.expectedTravelTime.description
             print(distance/Double(time)!)
-            navBar.items![0].title = "Distance: \(Int(distance/1000)).\(Int(Int((distance-Double(1000*Int(distance/Double(1000))))/100))) kilometers, Est. Time: \(Int(distance/1000/8*60)) mins"
+            if let view = self.view.viewWithTag(5), let view2 = self.view.viewWithTag(6) {
+                view.removeFromSuperview()
+                view2.removeFromSuperview()
+            }
+            navBar.items![0].title = "Distance: \(Int(distance/1000)).\(Int(Int((distance-Double(1000*Int(distance/Double(1000))))/100))) km, Est. Time: \(Int(distance/1000/8*60)) mins"
         }
         // Convert the route’s coordinates into a polyline
         var routeCoordinates = route.coordinates!
@@ -291,14 +369,21 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UIGestureRecogniz
             
             
             
-            self.label.backgroundColor = UIColor.green
-            self.label.text = "Click here to begin!"
+            
+            self.labelDown!.backgroundColor = UIColor.green
+            self.labelDown!.text = "Click here to begin!"
             let begin = UITapGestureRecognizer(target: self, action: "buttonTouched:")
             begin.delegate = self
             self.view.addGestureRecognizer(begin)
             
             
             
+        }
+        
+        if let view = self.view.viewWithTag(5), let view2 = self.view.viewWithTag(6) {
+            
+            view.removeFromSuperview()
+            view2.removeFromSuperview()
         }
         
         mapView.deselectAnnotation(mapView.annotations?[0], animated: true)
@@ -320,7 +405,7 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UIGestureRecogniz
     
     func calculateRoute(from origin: CLLocationCoordinate2D, completion: @escaping (Route?, Error?) -> ()) {
         
-        let str: String = "https://runningapp-api-heroku.herokuapp.com/data/?lat=\(Double(curLocation.coordinate.latitude))&lng=\(Double(curLocation.coordinate.longitude))&dist=\(self.distance/(2))"
+        let str: String = "https://runningapp-api-heroku.herokuapp.com/data/?lat=\(Double(curLocation.coordinate.latitude))&lng=\(Double(curLocation.coordinate.longitude))&dist=\(self.distance!/(2))"
         
         Alamofire.request(str).responseJSON { response in
             
@@ -387,13 +472,45 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UIGestureRecogniz
         }
     }
     
-    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @objc func keyboardWillChange(notification: Notification) {
+        print("Keyboard will show: \(notification.name.rawValue)")
+        
+        guard let keyboardRect = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+            return
+        }
+        
+        if notification.name == Notification.Name.UIKeyboardWillShow ||
+            notification.name == Notification.Name.UIKeyboardWillChangeFrame {
+            view.frame.origin.y = -keyboardRect.height + 0
+        } else {
+            view.frame.origin.y = 0
+        }
+    }
 }
+
+extension MapViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        tap.cancelsTouchesInView = true
+        view.addGestureRecognizer(tap)
+    }
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
+
+
     
 
 

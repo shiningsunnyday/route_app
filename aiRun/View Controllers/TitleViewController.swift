@@ -30,7 +30,7 @@ class TitleViewController: UIViewController, LocationDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         if let lat = lat, let long = long {
             

@@ -8,7 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0E24D2DEBEBE7AF579DCF48A /* Pods_aiRun.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E9BF77B545D51F3BFF8C66 /* Pods_aiRun.framework */; };
-		641582B5212A96C20064FA82 /* beautiful-sunset-flfef-ocean-sky-sun-background-images-best-of-100-engaging-running-s-c2b7-pexels-c2b7-free-stock-s-of-beautiful-sunset-flfef-ocean-sky-sun-background-images.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 641582B7212A96C20064FA82 /* beautiful-sunset-flfef-ocean-sky-sun-background-images-best-of-100-engaging-running-s-c2b7-pexels-c2b7-free-stock-s-of-beautiful-sunset-flfef-ocean-sky-sun-background-images.jpg */; };
+		6410F6432169B422004BE13E /* sunset.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6410F6422169B422004BE13E /* sunset.jpg */; };
+		6410F6472169DC04004BE13E /* gillian.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6410F6462169DC04004BE13E /* gillian.jpg */; };
+		6410F6492169DD4B004BE13E /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6410F6482169DD4B004BE13E /* AboutViewController.swift */; };
+		6410F64B2169E212004BE13E /* MailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6410F64A2169E212004BE13E /* MailViewController.swift */; };
 		6415C8B92100740A00DAC298 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6415C8B82100740A00DAC298 /* AppDelegate.swift */; };
 		6415C8BB2100740A00DAC298 /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6415C8BA2100740A00DAC298 /* TitleViewController.swift */; };
 		6415C8BE2100740A00DAC298 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6415C8BC2100740A00DAC298 /* Main.storyboard */; };
@@ -28,6 +31,8 @@
 		64A9F77321652A81004A17BC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 646CFA35214E9DCF00E98002 /* GoogleService-Info.plist */; };
 		64B0349B2145109C00FA6600 /* VoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B0349A2145109C00FA6600 /* VoiceViewController.swift */; };
 		64C725B42165FF7F00549603 /* welcome.MP4 in Resources */ = {isa = PBXBuildFile; fileRef = 64C725B32165FF7F00549603 /* welcome.MP4 */; };
+		64CE3195216B4A9400AAE32C /* siri.MP4 in Resources */ = {isa = PBXBuildFile; fileRef = 64CE3193216B4A9300AAE32C /* siri.MP4 */; };
+		64CE3196216B4A9400AAE32C /* reroute.MP4 in Resources */ = {isa = PBXBuildFile; fileRef = 64CE3194216B4A9400AAE32C /* reroute.MP4 */; };
 		64D8F3EC215A95A400CDD803 /* UserDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D8F3EB215A95A400CDD803 /* UserDelegate.swift */; };
 		64D8F3EE215AB63700CDD803 /* PlayerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D8F3ED215AB63700CDD803 /* PlayerDelegate.swift */; };
 		64D8F3F5215AD11E00CDD803 /* turnright.MP4 in Resources */ = {isa = PBXBuildFile; fileRef = 64D8F3EF215AD11A00CDD803 /* turnright.MP4 */; };
@@ -40,7 +45,11 @@
 
 /* Begin PBXFileReference section */
 		447B50B3FADC8789F46948CC /* Pods-aiRun.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aiRun.debug.xcconfig"; path = "Pods/Target Support Files/Pods-aiRun/Pods-aiRun.debug.xcconfig"; sourceTree = "<group>"; };
-		641582B8212A97280064FA82 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = en; path = "en.lproj/beautiful-sunset-flfef-ocean-sky-sun-background-images-best-of-100-engaging-running-s-c2b7-pexels-c2b7-free-stock-s-of-beautiful-sunset-flfef-ocean-sky-sun-background-images.jpg"; sourceTree = "<group>"; };
+		6410F6412169B3C4004BE13E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		6410F6422169B422004BE13E /* sunset.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sunset.jpg; sourceTree = "<group>"; };
+		6410F6462169DC04004BE13E /* gillian.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gillian.jpg; sourceTree = "<group>"; };
+		6410F6482169DD4B004BE13E /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		6410F64A2169E212004BE13E /* MailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailViewController.swift; sourceTree = "<group>"; };
 		6415C8B52100740A00DAC298 /* aiRun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aiRun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6415C8B82100740A00DAC298 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6415C8BA2100740A00DAC298 /* TitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +71,8 @@
 		6488F25E214F96600089B3EB /* aiRun.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = aiRun.entitlements; sourceTree = "<group>"; };
 		64B0349A2145109C00FA6600 /* VoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceViewController.swift; sourceTree = "<group>"; };
 		64C725B32165FF7F00549603 /* welcome.MP4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = welcome.MP4; sourceTree = "<group>"; };
+		64CE3193216B4A9300AAE32C /* siri.MP4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = siri.MP4; sourceTree = "<group>"; };
+		64CE3194216B4A9400AAE32C /* reroute.MP4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = reroute.MP4; sourceTree = "<group>"; };
 		64D8F3EB215A95A400CDD803 /* UserDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDelegate.swift; sourceTree = "<group>"; };
 		64D8F3ED215AB63700CDD803 /* PlayerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDelegate.swift; sourceTree = "<group>"; };
 		64D8F3EF215AD11A00CDD803 /* turnright.MP4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = turnright.MP4; sourceTree = "<group>"; };
@@ -97,6 +108,10 @@
 		6415C8AC2100740A00DAC298 = {
 			isa = PBXGroup;
 			children = (
+				64CE3194216B4A9400AAE32C /* reroute.MP4 */,
+				64CE3193216B4A9300AAE32C /* siri.MP4 */,
+				6410F6462169DC04004BE13E /* gillian.jpg */,
+				6410F6422169B422004BE13E /* sunset.jpg */,
 				64C725B32165FF7F00549603 /* welcome.MP4 */,
 				64D8F3F3215AD11D00CDD803 /* gostraight.MP4 */,
 				64D8F3F0215AD11B00CDD803 /* slightleft.MP4 */,
@@ -104,7 +119,6 @@
 				64D8F3F2215AD11C00CDD803 /* turnaround.MP4 */,
 				64D8F3F4215AD11E00CDD803 /* turnleft.MP4 */,
 				64D8F3EF215AD11A00CDD803 /* turnright.MP4 */,
-				641582B7212A96C20064FA82 /* beautiful-sunset-flfef-ocean-sky-sun-background-images-best-of-100-engaging-running-s-c2b7-pexels-c2b7-free-stock-s-of-beautiful-sunset-flfef-ocean-sky-sun-background-images.jpg */,
 				6415C8B72100740A00DAC298 /* aiRun */,
 				6415C8B62100740A00DAC298 /* Products */,
 				D804AB172FC8E26FE4DCB6E4 /* Pods */,
@@ -160,6 +174,8 @@
 				6415C8BA2100740A00DAC298 /* TitleViewController.swift */,
 				6453B5AF2129565E000CFA74 /* SwipeViewController.swift */,
 				64B0349A2145109C00FA6600 /* VoiceViewController.swift */,
+				6410F6482169DD4B004BE13E /* AboutViewController.swift */,
+				6410F64A2169E212004BE13E /* MailViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -204,12 +220,15 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0940;
-				ORGANIZATIONNAME = "Michael Sun and Eric Frankel";
+				ORGANIZATIONNAME = "Michael Sun";
 				TargetAttributes = {
 					6415C8B42100740A00DAC298 = {
 						CreatedOnToolsVersion = 9.4.1;
 						SystemCapabilities = {
 							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -239,13 +258,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6410F6432169B422004BE13E /* sunset.jpg in Resources */,
 				64A9F77321652A81004A17BC /* GoogleService-Info.plist in Resources */,
-				641582B5212A96C20064FA82 /* beautiful-sunset-flfef-ocean-sky-sun-background-images-best-of-100-engaging-running-s-c2b7-pexels-c2b7-free-stock-s-of-beautiful-sunset-flfef-ocean-sky-sun-background-images.jpg in Resources */,
 				64D8F3F9215AD11E00CDD803 /* gostraight.MP4 in Resources */,
 				6415C8C62100740C00DAC298 /* LaunchScreen.storyboard in Resources */,
 				64C725B42165FF7F00549603 /* welcome.MP4 in Resources */,
 				64D8F3F5215AD11E00CDD803 /* turnright.MP4 in Resources */,
 				64D8F3F7215AD11E00CDD803 /* slightright.MP4 in Resources */,
+				64CE3196216B4A9400AAE32C /* reroute.MP4 in Resources */,
 				6453B5A42129537B000CFA74 /* run.jpg in Resources */,
 				6453B5A621295391000CFA74 /* runman.png in Resources */,
 				64D8F3F8215AD11E00CDD803 /* turnaround.MP4 in Resources */,
@@ -253,6 +273,8 @@
 				6415C8BE2100740A00DAC298 /* Main.storyboard in Resources */,
 				64D8F3F6215AD11E00CDD803 /* slightleft.MP4 in Resources */,
 				64D8F3FA215AD11E00CDD803 /* turnleft.MP4 in Resources */,
+				64CE3195216B4A9400AAE32C /* siri.MP4 in Resources */,
+				6410F6472169DC04004BE13E /* gillian.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,8 +377,10 @@
 				6415C8BB2100740A00DAC298 /* TitleViewController.swift in Sources */,
 				64B0349B2145109C00FA6600 /* VoiceViewController.swift in Sources */,
 				6415C8C12100740A00DAC298 /* aiRun.xcdatamodeld in Sources */,
+				6410F6492169DD4B004BE13E /* AboutViewController.swift in Sources */,
 				6453B5B02129565E000CFA74 /* SwipeViewController.swift in Sources */,
 				64D8F3EC215A95A400CDD803 /* UserDelegate.swift in Sources */,
+				6410F64B2169E212004BE13E /* MailViewController.swift in Sources */,
 				6415C8D1210134DF00DAC298 /* ListOfCoordinates.swift in Sources */,
 				6415C8B92100740A00DAC298 /* AppDelegate.swift in Sources */,
 				6488F25D214EAA100089B3EB /* UserRoute.swift in Sources */,
@@ -372,18 +396,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		641582B7212A96C20064FA82 /* beautiful-sunset-flfef-ocean-sky-sun-background-images-best-of-100-engaging-running-s-c2b7-pexels-c2b7-free-stock-s-of-beautiful-sunset-flfef-ocean-sky-sun-background-images.jpg */ = {
-			isa = PBXVariantGroup;
-			children = (
-				641582B8212A97280064FA82 /* en */,
-			);
-			name = "beautiful-sunset-flfef-ocean-sky-sun-background-images-best-of-100-engaging-running-s-c2b7-pexels-c2b7-free-stock-s-of-beautiful-sunset-flfef-ocean-sky-sun-background-images.jpg";
-			sourceTree = "<group>";
-		};
 		6415C8BC2100740A00DAC298 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				6415C8BD2100740A00DAC298 /* Base */,
+				6410F6412169B3C4004BE13E /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

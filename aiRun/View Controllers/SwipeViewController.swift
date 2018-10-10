@@ -16,7 +16,7 @@ class SwipeViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var email: UITextField!
 
-    
+    var stalker: UILabel?
     
     @IBOutlet weak var emailText: UITextField!
     
@@ -25,17 +25,31 @@ class SwipeViewController: UIViewController {
     var identifier: String?
     var boo2 = false
     var newUser = false
-    var performedSegue = false
+    var performedSegue = false { didSet {
+        if let view = self.view.viewWithTag(10) {
+            view.removeFromSuperview()
+        
+        }}}
+    
+    
+    @IBOutlet weak var runName: UILabel!
     
     @IBAction func didPress(_ sender: Any) {
+        
         
         boo2 = true
         if !boo {
             
-            activityIndicator.center = CGPoint(x: self.view.center.x, y: self.view.center.x + 375)
+            
             activityIndicator.hidesWhenStopped = true
             activityIndicator.activityIndicatorViewStyle = .whiteLarge
+            
+            activityIndicator.color = UIColor.black
+            
+        
             self.view.addSubview(activityIndicator)
+            
+            self.view.addSubview(stalker!)
             activityIndicator.startAnimating()
             
             
@@ -79,19 +93,48 @@ class SwipeViewController: UIViewController {
         
         }}
 
-    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
+    var activityIndicator = UIActivityIndicatorView()
     var curLocation = CLLocation()
     
 
+    @IBOutlet weak var loginButton: UIButton!
     
-    
+    @objc func buttonEnabled() {
+        
+        self.loginButton.isEnabled = true
+        
+    }
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        self.emailText.borderStyle = .bezel
+        self.runName.attributedText = NSAttributedString(string: "aiRoute")
+        self.loginButton.isEnabled = false
+        self.button.layer.borderWidth = 0.5
+        activityIndicator.center = CGPoint(x: self.view.center.x, y: self.view.center.x)
+        stalker = UILabel(frame: CGRect(x: activityIndicator.frame.midX - 50, y: activityIndicator.frame.midY + 20, width: 100, height: 40))
         
-        self.imageView.image = UIImage(contentsOfFile: "beautiful-sunset-flfef-ocean-sky-sun-background-images-best-of-100-engaging-running-s-c2b7-pexels-c2b7-free-stock-s-of-beautiful-sunset-flfef-ocean-sky-sun-background-images")
+        stalker?.attributedText = NSAttributedString(string: "Stalking your location")
+        stalker?.textAlignment = .center
+        stalker?.adjustsFontSizeToFitWidth = true
+        stalker?.tag = 10
+        stalker?.highlightedTextColor = UIColor.lightGray
+        
+        
+        
+        
+        let url = URL(fileURLWithPath: Bundle.main.path(forResource: "sunset.jpg", ofType: nil)!)
+        let imageData = try! Data(contentsOf: url)
+        self.imageView.image = UIImage(data: imageData)
+        
+        self.emailText.borderStyle = .bezel
+        self.emailText.layer.borderWidth = 0.5
+        
+        
         self.imageView.sizeToFit()
+        
+        
+        self.emailText.addTarget(self, action: #selector(SwipeViewController.buttonEnabled), for: .editingChanged)
+        
         
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(SwipeViewController.didPress)))
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(SwipeViewController.dismissKeyboard)))
@@ -102,8 +145,8 @@ class SwipeViewController: UIViewController {
         
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.requestLocation()
+        locationManager.requestAlwaysAuthorization()
+        
         
         
     }
@@ -125,7 +168,7 @@ class SwipeViewController: UIViewController {
         
         if notification.name == Notification.Name.UIKeyboardWillShow ||
             notification.name == Notification.Name.UIKeyboardWillChangeFrame {
-            view.frame.origin.y = -keyboardRect.height + 64
+            view.frame.origin.y = -keyboardRect.height + 192
         } else {
             view.frame.origin.y = 0
         }
@@ -140,6 +183,7 @@ class SwipeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(animated)
+        
         view.layoutIfNeeded()
         let bottomOfScreen: CGFloat = scrollView.contentSize.height - view.frame.height + offset
         offset = 64
@@ -147,6 +191,7 @@ class SwipeViewController: UIViewController {
         
     }
     
+    @IBOutlet weak var button: UIButton!
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         guard let identifier = segue.identifier else { return }
@@ -155,11 +200,10 @@ class SwipeViewController: UIViewController {
             
         case "start":
             
-            let destination = segue.destination as! TitleViewController
-            destination.lat = curLocation.coordinate.latitude
-            destination.long = curLocation.coordinate.longitude
-            destination.user = self.identifier
+            let destination = segue.destination as! MapViewController
             
+            destination.curLocation = self.curLocation
+            destination.newUser = newUser
             if let email = email.text {
                 
                 

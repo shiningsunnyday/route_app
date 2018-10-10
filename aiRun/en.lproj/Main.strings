@@ -1,0 +1,45 @@
+
+/* Class = "UITextView"; text = "If you are interested in collaborating with him on future aiX projects, please contact him via any of the below methods."; ObjectID = "0Wa-DN-5I7"; */
+"0Wa-DN-5I7.text" = "If you are interested in collaborating with him on future aiX projects, please contact him via any of the below methods.";
+
+/* Class = "UITextView"; text = "This app was created by Michael Sun, creator of aiX, a line of mobile app products targeted for personal growth."; ObjectID = "9b3-3L-bBI"; */
+"9b3-3L-bBI.text" = "This app was created by Michael Sun, creator of aiX, a line of mobile app products targeted for personal growth.";
+
+/* Class = "UIButton"; normalTitle = "Facebook"; ObjectID = "EFC-m2-1JM"; */
+"EFC-m2-1JM.normalTitle" = "Facebook";
+
+/* Class = "UITextField"; placeholder = "Latitude"; ObjectID = "ElV-5D-9S9"; */
+"ElV-5D-9S9.placeholder" = "Latitude";
+
+/* Class = "UIButton"; normalTitle = "Website"; ObjectID = "FeP-2u-d7I"; */
+"FeP-2u-d7I.normalTitle" = "Website";
+
+/* Class = "UITextView"; text = "He is currently an undergraduate studying mathematics at Stanford University."; ObjectID = "GKA-2G-QOw"; */
+"GKA-2G-QOw.text" = "He is currently an undergraduate studying mathematics at Stanford University.";
+
+/* Class = "UIButton"; normalTitle = "Sign up / Log in"; ObjectID = "Gcr-sC-tQv"; */
+"Gcr-sC-tQv.normalTitle" = "Sign up / Log in";
+
+/* Class = "UIBarButtonItem"; title = "Click here to begin"; ObjectID = "NTL-8M-uD5"; */
+"NTL-8M-uD5.title" = "Click here to begin";
+
+/* Class = "UITextField"; placeholder = "Kilometers"; ObjectID = "Rvx-dO-wFV"; */
+"Rvx-dO-wFV.placeholder" = "Kilometers";
+
+/* Class = "UILabel"; text = "aiRun"; ObjectID = "UvJ-9N-rYX"; */
+"UvJ-9N-rYX.text" = "aiRun";
+
+/* Class = "UITextField"; placeholder = "Longitude"; ObjectID = "ai0-Kz-B6O"; */
+"ai0-Kz-B6O.placeholder" = "Longitude";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "bq9-VI-moE"; */
+"bq9-VI-moE.text" = "Email";
+
+/* Class = "UIButton"; normalTitle = "LinkedIn"; ObjectID = "cQr-mQ-P7i"; */
+"cQr-mQ-P7i.normalTitle" = "LinkedIn";
+
+/* Class = "UIButton"; normalTitle = "Tap me"; ObjectID = "hhy-B7-8Fj"; */
+"hhy-B7-8Fj.normalTitle" = "Tap me";
+
+/* Class = "UILabel"; text = "aiRun"; ObjectID = "qOG-jD-rqc"; */
+"qOG-jD-rqc.text" = "aiRun";
